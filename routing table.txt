@@ -1,3 +1,0 @@
-C 192.168.2.0/24 oznacza, że router ma bezpośrednie połączenie z całą siecią lokalną (LAN) o adresie 192.168.2.0 i masce podsieci /24. Router wie, że wszystkie urządzenia znajdujące się w tym zakresie adresów IP są "za jego rogiem" na interfejsie GigabitEthernet0/0/1.
-
-L 192.168.2.3/32 precyzyjnie identyfikuje konkretny host w tej sieci LAN. Adres 192.168.2.3 z maską /32 oznacza, że mówimy o pojedynczym, konkretnym adresie IP, który jest przypisany do interfejsu GigabitEthernet0/0/1 samego routera. Router "zna" swój własny adres IP na tym interfejsie.
