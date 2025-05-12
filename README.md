@@ -146,3 +146,21 @@ Router1# show ip route
 Albo jak na zdjęciu kliknij ikonę lupy i przekieruj na router -> 'Routing Table'
 ![Routing-table](images/routing%20table%20manage.PNG)
 ![Routing-table](images/routing-table-summary.PNG)
+
+**Objaśnienie Wpisów w Tabeli Routingu**
+
+W tabeli routingu routera napotkasz różne typy wpisów, oznaczone literami. Dwa z nich, C i L, są generowane automatycznie, gdy interfejs routera jest aktywny i ma przypisany adres IP.
+
+C - Connected (Bezpośrednio Połączona Sieć)
+Wpis oznaczony C wskazuje na sieć, z którą router ma bezpośrednie połączenie fizyczne i logiczne (interfejs jest włączony i skonfigurowany z adresem IP należącym do tej sieci).
+
+Wpis ten oznacza, że router ma bezpośrednie połączenie z całą siecią lokalną (LAN) o adresie 192.168.2.0 i masce podsieci /24. Router wie, że wszystkie urządzenia znajdujące się w tym zakresie adresów IP są "za jego rogiem" na interfejsie GigabitEthernet0/0/1. Router nie musi pytać nikogo o drogę do tych adresów - wie, że są dostępne bezpośrednio przez ten interfejs.
+
+L - Local (Adres Lokalny)
+Wpis oznaczony L precyzyjnie identyfikuje konkretny adres IP przypisany do jednego z interfejsów samego routera. Jest to adres "hosta" (w tym przypadku samego routera) w bezpośrednio połączonej sieci.
+
+Adres 192.168.2.3 z maską /32 (co oznacza pojedynczy adres IP) precyzyjnie identyfikuje konkretny host w tej sieci LAN - w tym przypadku jest to adres IP przypisany do interfejsu GigabitEthernet0/0/1 samego routera. Router "zna" swój własny adres IP na tym interfejsie i wie, że pakiety kierowane bezpośrednio na ten adres są przeznaczone dla niego samego. Maska /32 jasno wskazuje, że chodzi o pojedynczy, unikalny adres hosta, a nie całą sieć.
+
+**Podsumowanie**
+
+W tym laboratorium skonfigurowaliśmy podstawową sieć z routingiem statycznym. Nauczyliśmy się przypisywać adresy IP interfejsom routerów i komputerom, a także konfigurować statyczne trasy, które pozwalają routerom przekazywać pakiety do sieci niepołączonych bezpośrednio. Zapoznaliśmy się również z podstawowymi wpisami w tabeli routingu (C i L) i ich znaczeniem.
